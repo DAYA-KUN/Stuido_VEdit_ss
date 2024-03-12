@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         'header_color': '#7E7DFB',
+        'main_div': '#A8F2E6'
       }
     },
   },
