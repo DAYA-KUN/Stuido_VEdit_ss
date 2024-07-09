@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../components/NavBar.jsx";
 function Home() {
   return (
     <div className="flex h-screen sm:flex ">
