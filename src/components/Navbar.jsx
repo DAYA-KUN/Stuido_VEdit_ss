@@ -1,9 +1,20 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const NavBar = () => {
   const [activeItem, setActiveItem] = useState(0);
 
   const handleDivClick = (index) => {
     setActiveItem(index);
+  };
+  const navigate = useNavigate();
+
+    const handleProjectsClick = () => {
+        navigate('/Projects');
+    };
+
+    const handleTutorialClick = () => {
+      navigate('/Tutorial');
   };
 
   return (
@@ -32,7 +43,7 @@ const NavBar = () => {
             </li>
           </div>
         </button>
-        <button className="w-full hover:bg-white hover:text-white font-bold py-4 px-4 rounded flex items-center transform transition-transform duration-300">
+        <button className="w-full hover:bg-white hover:text-white font-bold py-4 px-4 rounded flex items-center transform transition-transform duration-300" onClick={handleProjectsClick}>
           <div
             onClick={() => handleDivClick(1)}
             className={`nav-item ${activeItem === 1 ? 'active' : ''}`}
@@ -50,7 +61,7 @@ const NavBar = () => {
             </li>
           </div>
         </button>
-        <button className="w-full hover:bg-white hover:text-white font-bold py-4 px-4 rounded flex items-center transform transition-transform duration-300">
+        <button className="w-full hover:bg-white hover:text-white font-bold py-4 px-4 rounded flex items-center transform transition-transform duration-300" onClick={handleTutorialClick}>
           <div
             onClick={() => handleDivClick(2)}
             className={`nav-item ${activeItem === 2 ? 'active' : ''}`}
