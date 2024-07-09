@@ -1,8 +1,5 @@
 import NavBar from "../components/NavBar";
-import { useNavigate } from "react-router-dom";
-
 function Home() {
-  const navigate = useNavigate();
   return (
     <div className="flex h-screen sm:flex ">
       <div className=" bg-white sm:w-56 fixed h-screen">
@@ -54,7 +51,6 @@ function Home() {
             <button
               className="text-xl bg-teal-400 hover:bg-teal-500 text-white font-bold py-4 px-4 rounded flex items-center"
               title="Start a new editing"
-              onClick={() => navigate("/editor")}
             >
               <span dir="rtl" className="ps-80">
                 {" "}
