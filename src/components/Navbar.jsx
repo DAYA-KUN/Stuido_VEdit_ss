@@ -14,13 +14,16 @@ const NavBar = () => {
         alt="Logo"
       />
       <ul>
-        <button className="w-full  hover  font-bold py-4 px-4 rounded flex items-center">
+        <button className="w-full hover:bg-white hover:text-white font-bold py-4 px-4 rounded flex items-center transform transition-transform duration-300">
           <div
             onClick={() => handleDivClick(0)}
             className={`nav-item ${activeItem === 0 ? 'active' : ''}`}
             style={{
-              backgroundColor: activeItem === 0 ? 'rgb(0, 176, 253)' : '',
+              backgroundColor: activeItem === 0 ? 'rgb(168, 242, 230)' : '',
               transition: 'background-color 0.3s ease',
+              transform: activeItem === 0 ? 'translateY(-2px)' : '',
+              borderRadius: '10px', // Changed to rounded rectangle
+              boxShadow: activeItem === 0 ? '0 0 10px rgba(0, 0, 0, 0.2)' : '',
             }}
           >
             <li className="flex items-center py-0 p-9">
@@ -29,13 +32,16 @@ const NavBar = () => {
             </li>
           </div>
         </button>
-        <button className="w-full hover font-bold py-4 px-4 rounded flex items-center">
+        <button className="w-full hover:bg-white hover:text-white font-bold py-4 px-4 rounded flex items-center transform transition-transform duration-300">
           <div
             onClick={() => handleDivClick(1)}
             className={`nav-item ${activeItem === 1 ? 'active' : ''}`}
             style={{
-              backgroundColor: activeItem === 1 ? 'rgb(0, 176, 253)' : '',
+              backgroundColor: activeItem === 1 ? 'rgb(168, 242, 230)' : '',
               transition: 'background-color 0.3s ease',
+              transform: activeItem === 1 ? 'translateY(-2px)' : '',
+              borderRadius: '10px', // Changed to rounded rectangle
+              boxShadow: activeItem === 1 ? '0 0 10px rgba(0, 0, 0, 0.2)' : '',
             }}
           >
             <li className="flex items-center py-0 p-9">
@@ -44,13 +50,16 @@ const NavBar = () => {
             </li>
           </div>
         </button>
-        <button className="w-full  hover font-bold py-4 px-4 rounded flex items-center">
+        <button className="w-full hover:bg-white hover:text-white font-bold py-4 px-4 rounded flex items-center transform transition-transform duration-300">
           <div
             onClick={() => handleDivClick(2)}
             className={`nav-item ${activeItem === 2 ? 'active' : ''}`}
             style={{
-              backgroundColor: activeItem === 2 ? 'rgb(0, 176, 253)' : '',
+              backgroundColor: activeItem === 2 ? 'rgb(168, 242, 230)' : '',
               transition: 'background-color 0.3s ease',
+              transform: activeItem === 2 ? 'translateY(-2px)' : '',
+              borderRadius: '10px', // Changed to rounded rectangle
+              boxShadow: activeItem === 2 ? '0 0 10px rgba(0, 0, 0, 0.2)' : '',
             }}
           >
             <li className="flex items-center py-0 p-9">
