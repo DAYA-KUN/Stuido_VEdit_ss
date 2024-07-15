@@ -1,11 +1,16 @@
 import NavBar from "../components/NavBar.jsx";
+import { useNavigate } from 'react-router-dom';
 function Home() {
+  const navigate = useNavigate();
+  const handleCreateVideoClick = () => {
+    navigate('/createVideo');
+};
   return (
     <div className="flex h-screen sm:flex ">
       <div className=" bg-white sm:w-56 fixed h-screen">
         <NavBar />
       </div>
-
+z
       <div
         className="pl-56 bg-slate-400 sm overflow-auto"
         style={{
@@ -49,8 +54,9 @@ function Home() {
           </div>
           <div className="mt-4">
             <button
-              className="text-xl bg-teal-400 hover:bg-teal-500 text-white font-bold py-4 px-4 rounded flex items-center"
+              className="text-xl bg-custom-purple hover:bg-custom-purple1 text-white font-bold py-4 px-4 rounded flex items-center"
               title="Start a new editing"
+              onClick={handleCreateVideoClick}
             >
               <span dir="rtl" className="ps-80">
                 {" "}
@@ -61,7 +67,7 @@ function Home() {
           </div>
           <br></br>
           <br></br>
-          <div className="pb-72 pr-16 bg-main_div">
+          <div className="pb-72 pr-16 bg-home-div">
             <p
               className="pl-4 pt-4 font-extrabold text-black text-3xl"
               style={{ fontFamily: "Cool" }}
@@ -72,17 +78,17 @@ function Home() {
 
             <div className="pl-4 grid grid-rows-2 grid-cols-3 gap-4">
               <div className="bg-white p-4">
-                <video controls>
+                <video  controls>
                   <source src="src/assets/vid2.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className="bg-white p-4">
-                <video controls>
+                <video >
                   <source src="src/assets/vid2.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className="bg-white p-4">
-                <video controls>
+                <video  controls>
                   <source src="src/assets/vid2.mp4" type="video/mp4" />
                 </video>
               </div>
