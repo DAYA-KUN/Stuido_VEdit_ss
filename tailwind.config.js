@@ -19,6 +19,9 @@ export default {
         'button-nav': '#F8EFFF',
         'home-div': '#F5F5FA',
         'hover':'#F8EFFF',
+      },
+      fontSize: {
+        'xs':'0.625rem',
       }
     },
   },
