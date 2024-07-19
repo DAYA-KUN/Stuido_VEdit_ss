@@ -17,7 +17,8 @@ export default {
         'custom-purple': '#9531EC',
         'custom-purple1':'#A357F5',
         'button-nav': '#F8EFFF',
-        'home-div': '#F5F5FA'
+        'home-div': '#F5F5FA',
+        'hover':'#F8EFFF',
       }
     },
   },
