@@ -6,7 +6,7 @@ function Home() {
     navigate('/createVideo');
 };
   return (
-    <div className="flex h-screen sm:flex ">
+    <div className="flex h-screen sm:flex fixed">
       <div className=" bg-white sm:w-56 fixed h-screen">
         <NavBar />
       </div>
