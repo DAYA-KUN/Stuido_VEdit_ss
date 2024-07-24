@@ -1,5 +1,3 @@
-/* CreateVideo.css */
-
 .left-sidebar, .right-sidebar {
   position: absolute;
   top: 0;
@@ -10,7 +8,6 @@
   flex-direction: column;
   align-items: center;
   padding-top: 1.25rem;
-  transition: transform 0.3s ease, width 0.3s ease;
 }
 
 .left-sidebar {
@@ -21,37 +18,17 @@
   right: 0;
 }
 
-.new-sidebar {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 20%;
-  background: linear-gradient(to bottom, #374151, #000);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 1.25rem;
-  transition: transform 0.3s ease, width 0.3s ease;
-}
-
-.left-new-sidebar {
-  left: 10%;
-  transform: translateX(-100%);
-}
-
-.right-new-sidebar {
-  right: 10%;
-  transform: translateX(100%);
-}
-
-.new-sidebar.show {
-  transform: translateX(0);
-}
-
 .sidebar-content img {
   height: 2rem;
   width: 2rem;
   margin-bottom: 0.5rem;
+  filter: brightness(0.7); /* Default to light-shaded */
+  transition: filter 0.3s ease;
+}
+
+.sidebar-content img:hover {
+  filter: brightness(1.2); /* Brighten on hover */
+  cursor: pointer;
 }
 
 .sidebar-content span {
@@ -59,31 +36,23 @@
   font-size: 0.75rem;
 }
 
-.toggle-button {
-  position: absolute;
-  top: 33%;
-  transform: translateY(-50%);
-  background-color: #6b7280;
-  border-radius: 50%;
-  padding: 0.25rem;
-  cursor: pointer;
-  transition: transform 0.3s;
+.w-20.bg-gradient-to-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.25rem;
+  transition: all 0.3s ease-in-out;
 }
 
-.left-toggle-button {
-  left: 10%;
+/* Default icon style */
+.w-20.bg-gradient-to-b img {
+  filter: brightness(0.8); /* Light shaded icons */
+  transition: filter 0.3s ease-in-out;
 }
 
-.right-toggle-button {
-  right: 10%;
-}
-
-.left-toggle-button.move {
-  left: 30%;
-}
-
-.right-toggle-button.move {
-  right: 30%;
+/* Icon style on hover */
+.w-20.bg-gradient-to-b img:hover {
+  filter: brightness(1.2); /* Brighter icons on hover */
 }
 
 .center-div {
@@ -99,14 +68,13 @@
   background-color: white;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
-  width: 50%;
-  height: 50%;
+  width: 600px;
+  height: 300px;
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .video-element {
@@ -140,30 +108,33 @@
 }
 
 .video-frames {
+  background-color: #374151;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
   width: 100%;
-  height: 50%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide overflow from video-frames-header */
 }
 
 /* Adjust the video-frames-header for a better fit of the border */
 .video-frames-header {
-  width: calc(100% - 1rem); /* Adjust width to fit correctly */
+  width: 100%;
   height: 10%;
-  background-color: #374151; /* Match the color of the upper div */
+  background-color: #374151;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Space between left and right groups */
+  justify-content: space-between;
   padding: 0.5rem;
-  border: 2px solid #4B5563; /* Solid border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for a 3D effect */
-  margin: 0.5rem auto; /* Center and add margin for spacing */
-  position: relative; /* For positioning decorative elements */
+  border: 2px solid #4B5563;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem auto;
+  position: relative;
 }
-
-
 
 /* Adjust the header-icon to make icons smaller and add space between them */
 .header-icon {
@@ -204,9 +175,117 @@
   align-items: center;
 }
 
-.frame-box{
+.frame-box {
   margin: 20px;
   background-color: #000;
   width: 100%;
   height: 70px;
 }
+
+
+.video-controls {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  background-color: #374151;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.control-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control-icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+.control-icons img {
+  height: 24px;
+  width: 24px;
+  margin-right: 0.5rem;
+}
+
+.control-icons img:last-child {
+  margin-right: 0;
+  height: 24px;
+  width: 24px;
+}
+
+.control-icons-left,
+.control-icons-right {
+  display: flex;
+  align-items: center;
+}
+
+.control-icons-left img,
+.control-icons-right img {
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+.video-controls .control-icons-left {
+  margin-right: auto;
+}
+
+.video-controls .control-icons-right {
+  margin-left: auto;
+}
+
+.adjacent-div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  background: linear-gradient(to bottom, #4B5563, #1F2937); /* Adjust as needed */
+  display: none; /* Hidden by default */
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.adjacent-div.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.25rem;
+}
+
+.adjacent-div.left {
+  left: 80px; /* Adjust this value based on your sidebar width */
+}
+
+.adjacent-div.right {
+  right: 80px; /* Adjust this value based on your sidebar width */
+}
+
+.video-frames-time {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+}
+
+.time-display {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  margin-left: -100px;
+}
+
+.time-display > p > #total {
+  font-weight: normal; /* Remove bold from total time */
+  color: gray; /* Set total time to gray */
+}
+
