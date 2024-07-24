@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar.jsx";
+import NavBar from "../components/Navbar.jsx";
 import { useNavigate } from 'react-router-dom';
 function Home() {
   const navigate = useNavigate();
